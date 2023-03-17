@@ -18,7 +18,7 @@ import es.example.service.ProductServiceImp;
  * 
  * @project product-information
  * @package es.example.controller
- * @date 20123-03-17
+ * @date 2023-03-17
  * @author Fco Javier Redondo Martín
  * @version 1.1
  */

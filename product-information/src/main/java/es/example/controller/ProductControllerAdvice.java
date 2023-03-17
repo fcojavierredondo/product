@@ -6,13 +6,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import es.example.dto.ErrorDto;
+import es.example.utils.Constants;
 
 /**
  * Create exceptions to handle them.
  * 
  * @project product-information
  * @package es.example.service
- * @date 20123-03-17
+ * @date 2023-03-17
  * @author Fco Javier Redondo Martín
  * @version 1.1
  */
@@ -27,7 +28,7 @@ public class ProductControllerAdvice {
 	@ExceptionHandler(value = RuntimeException.class)
 	public ResponseEntity<ErrorDto> runtimeExceptionHandler(RuntimeException ex) {
 		
-		ErrorDto error = ErrorDto.builder().code("E-500").message(ex.getMessage()).build();
+		ErrorDto error = ErrorDto.builder().code(Constants.ERROR_E500).message(ex.getMessage()).build();
 		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
 	}
 }
