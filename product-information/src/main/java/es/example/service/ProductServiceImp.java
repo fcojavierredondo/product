@@ -11,13 +11,14 @@ import org.springframework.stereotype.Service;
 import es.example.dto.DataDto;
 import es.example.entity.Price;
 import es.example.repository.Repository;
+import es.example.utils.Constants;
 
 /**
  * Implementation of our services to bring us the data from the database
  * 
  * @project product-information
  * @package es.example.service
- * @date 20123-03-17
+ * @date 2023-03-17
  * @author Fco Javier Redondo Martín
  * @version 1.1
  */
@@ -54,7 +55,7 @@ public class ProductServiceImp implements ProductService {
 		
 		//If the optional has no value, throw the exception.
 		if(!price.isPresent()) {
-			throw new RuntimeException("No data for that date");
+			throw new RuntimeException(Constants.NO_DATA);
 		}
 		return price.get();
 	}

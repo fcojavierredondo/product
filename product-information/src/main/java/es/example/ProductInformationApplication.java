@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @project product-information
  * @package es.example
- * @date 20123-03-17
+ * @date 2023-03-17
  * @author Fco Javier Redondo Martín
  * @version 1.1
  */
