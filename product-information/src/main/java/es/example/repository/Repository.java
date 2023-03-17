@@ -20,7 +20,7 @@ public interface Repository extends JpaRepository<Price, Long> {
 	/**
 	 * Make query filtering by product id and brand id.
 	 * 
-	 * return A list of objects from the prices table.
+	 * @return A list of objects from the prices table.
 	 */
 	List<Price> findByProductIdAndBrandId(String productId, String brandId);
 

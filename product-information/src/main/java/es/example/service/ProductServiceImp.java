@@ -30,7 +30,7 @@ public class ProductServiceImp implements ProductService {
 	/**
 	 * A list is obtained with a find from the repository to later obtain a price object in another method and create the final object that is requested.
 	 * 
-	 * return An object with the product identifier, string identifier, rate to apply, dates to apply, and final price to apply.
+	 * @return An object with the product identifier, string identifier, rate to apply, dates to apply, and final price to apply.
 	 */
 	public DataDto getProductInformation(LocalDateTime dateTime, String productId, String brandId) {
 		
@@ -44,7 +44,7 @@ public class ProductServiceImp implements ProductService {
 	/**
 	 * Through a stream, it filters the price list by start and end date and sorts it by descending order of priority.
 	 * 
-	 * return A price object, from where we will get the data for our final object.
+	 * @return A price object, from where we will get the data for our final object.
 	 */
 	public Price findByDateByOrderByPriority(List<Price> priceList, LocalDateTime dateTime) {
 		
@@ -52,8 +52,9 @@ public class ProductServiceImp implements ProductService {
 				.filter(x -> dateTime.isAfter(x.getStartDate()) && dateTime.isBefore(x.getEndDate()))
 				.sorted(Comparator.comparingInt(Price::getPriority).reversed()).findFirst();
 		
+		//If the optional has no value, throw the exception.
 		if(!price.isPresent()) {
-			//throw exception
+			throw new RuntimeException("No data for that date");
 		}
 		return price.get();
 	}

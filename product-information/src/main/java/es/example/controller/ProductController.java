@@ -32,12 +32,12 @@ public class ProductController {
 	/**
 	 * Method that calls our service to obtain the information of the specific product.
 	 * 
-	 * return An object with the product identifier, string identifier, rate to apply, dates to apply, and final price to apply.
+	 * @return An object with the product identifier, string identifier, rate to apply, dates to apply, and final price to apply.
 	 */
 	@ResponseBody
 	@GetMapping(value = "/information")
 	public DataDto productInformation(
-			@RequestParam("dateTime") 
+			@RequestParam(value = "dateTime", required = true) 
 			@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateTime,
 			@RequestParam(value = "productId", required = true) String productId,
 			@RequestParam(value = "brandId", required = true) String brandId) {
