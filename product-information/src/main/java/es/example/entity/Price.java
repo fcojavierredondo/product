@@ -7,6 +7,8 @@ import lombok.ToString;
 import jakarta.persistence.*;
 
 /**
+ * Prices table entity.
+ * 
  * @project product-information
  * @package es.example.entity
  * @date 20123-03-17
