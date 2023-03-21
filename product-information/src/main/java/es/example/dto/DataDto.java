@@ -3,7 +3,10 @@ package es.example.dto;
 import java.time.LocalDateTime;
 
 import es.example.entity.Price;
-import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * Final object to return.
@@ -14,7 +17,10 @@ import lombok.Data;
  * @author Fco Javier Redondo Martín
  * @version 1.1
  */
-@Data
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
 public class DataDto {
 	
 	private Integer productId;

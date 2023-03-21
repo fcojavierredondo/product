@@ -33,7 +33,7 @@ public class ProductServiceImp implements ProductService {
 	 * 
 	 * @return An object with the product identifier, string identifier, rate to apply, dates to apply, and final price to apply.
 	 */
-	public DataDto getProductInformation(LocalDateTime dateTime, String productId, String brandId) {
+	public DataDto getProductInformation(LocalDateTime dateTime, Integer productId, Integer brandId) {
 		
 		List<Price> priceList = repository.findByProductIdAndBrandId(productId, brandId);
 

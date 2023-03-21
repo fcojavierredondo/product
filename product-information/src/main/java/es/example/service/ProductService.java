@@ -17,7 +17,7 @@ import es.example.entity.Price;
  */
 public interface ProductService {
 	
-	public DataDto getProductInformation(LocalDateTime dateTime, String productId, String brandId);
+	public DataDto getProductInformation(LocalDateTime dateTime, Integer productId, Integer brandId);
 	
 	public Price findByDateByOrderByPriority(List<Price> priceList, LocalDateTime dateTime);
 
