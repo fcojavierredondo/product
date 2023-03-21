@@ -39,8 +39,8 @@ public class ProductController {
 	public DataDto productInformation(
 			@RequestParam(value = "dateTime", required = true) 
 			@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateTime,
-			@RequestParam(value = "productId", required = true) String productId,
-			@RequestParam(value = "brandId", required = true) String brandId) {
+			@RequestParam(value = "productId", required = true) Integer productId,
+			@RequestParam(value = "brandId", required = true) Integer brandId) {
 		
 		return service.getProductInformation(dateTime, productId, brandId);
 	}

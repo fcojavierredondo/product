@@ -22,6 +22,6 @@ public interface Repository extends JpaRepository<Price, Long> {
 	 * 
 	 * @return A list of objects from the prices table.
 	 */
-	List<Price> findByProductIdAndBrandId(String productId, String brandId);
+	List<Price> findByProductIdAndBrandId(Integer productId, Integer brandId);
 
 }
